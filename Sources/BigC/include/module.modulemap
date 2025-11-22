@@ -1,0 +1,4 @@
+module BigC [system] {
+  header "BigC.h"
+  export *
+}
