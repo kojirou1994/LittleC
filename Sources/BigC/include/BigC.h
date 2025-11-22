@@ -14,6 +14,14 @@ int static inline little_openat(int fd, const char *path, int oflag, mode_t mode
   return openat(fd, path, oflag, mode);
 }
 
+#ifdef __apple__
+
+extern void exit(int) __attribute__((noreturn));
+extern void _exit(int) __attribute__((noreturn));
+extern void _Exit(int) __attribute__((noreturn));
+
+#endif
+
 #ifdef __linux__
 
 extern FILE *stdin __swift_nonisolated_unsafe;
