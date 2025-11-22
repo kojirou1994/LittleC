@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <dirent.h>
 #include <fcntl.h>
+#include <unistd.h>
 
 #define __swift_nonisolated_unsafe              __attribute__((__swift_attr__("nonisolated(unsafe)")))
 
