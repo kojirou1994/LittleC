@@ -21,11 +21,3 @@ public var errno: CInt {
     __error().pointee = newValue
   }
 }
-
-@_extern(c)
-@_alwaysEmitIntoClient @inlinable @inline(__always)
-public func perror(_ string: UnsafePointer<CChar>)
-
-@_extern(c)
-@_alwaysEmitIntoClient @inlinable @inline(__always)
-public func strerror(_ e: CInt) -> UnsafePointer<CChar>

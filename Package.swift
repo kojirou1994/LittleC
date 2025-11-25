@@ -8,8 +8,7 @@ let package = Package(
     .macOS(.v14),
   ],
   products: [
-    .library(name: "LittleC", targets: ["LittleC"]
-    ),
+    .library(name: "LittleC", targets: ["LittleC"]),
   ],
   targets: [
     // modulemap to c header directly
