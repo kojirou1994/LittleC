@@ -1,4 +1,4 @@
-#if canImport(Darwin) || os(FreeBSD)
+#if UNIX_BSD
 @_extern(c)
 @_alwaysEmitIntoClient @inlinable @inline(__always)
 public func __error() -> UnsafeMutablePointer<CInt>

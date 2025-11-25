@@ -3,7 +3,7 @@ import BigC
 @_alwaysEmitIntoClient @inlinable @inline(__always)
 nonisolated(unsafe)
 public var stdin: UnsafeMutablePointer<FILE> {
-  #if canImport(Darwin)
+  #if UNIX_BSD
   BigC.__stdinp
   #else
   BigC.stdin
@@ -13,7 +13,7 @@ public var stdin: UnsafeMutablePointer<FILE> {
 @_alwaysEmitIntoClient @inlinable @inline(__always)
 nonisolated(unsafe)
 public var stdout: UnsafeMutablePointer<FILE> {
-  #if canImport(Darwin)
+  #if UNIX_BSD
   BigC.__stdoutp
   #else
   BigC.stdout
@@ -23,7 +23,7 @@ public var stdout: UnsafeMutablePointer<FILE> {
 @_alwaysEmitIntoClient @inlinable @inline(__always)
 nonisolated(unsafe)
 public var stderr: UnsafeMutablePointer<FILE> {
-  #if canImport(Darwin)
+  #if UNIX_BSD
   BigC.__stdoutp
   #else
   BigC.stdout
