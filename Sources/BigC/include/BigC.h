@@ -1,8 +1,10 @@
+#include <time.h>
 #include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <dirent.h>
 #include <fcntl.h>
+#include <pthread.h>
 #include <unistd.h>
 
 #define __swift_nonisolated_unsafe              __attribute__((__swift_attr__("nonisolated(unsafe)")))
@@ -30,3 +32,5 @@ extern FILE *stdout __swift_nonisolated_unsafe;
 extern FILE *stderr __swift_nonisolated_unsafe;
 
 #endif
+
+extern void pthread_exit(void*) __attribute__((noreturn));

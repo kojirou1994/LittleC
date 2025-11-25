@@ -15,10 +15,10 @@ public func _Exit(_ status: CInt) -> Never {
   BigC._Exit(status)
 }
 
-@_alwaysEmitIntoClient @inlinable @inline(__always)
+@_alwaysEmitIntoClient
 public var EXIT_SUCCESS: CInt { BigC.EXIT_SUCCESS }
 
-@_alwaysEmitIntoClient @inlinable @inline(__always)
+@_alwaysEmitIntoClient
 public var EXIT_FAILURE: CInt { BigC.EXIT_FAILURE }
 
 @_extern(c)

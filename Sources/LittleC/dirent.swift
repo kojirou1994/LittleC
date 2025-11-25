@@ -32,7 +32,7 @@ public func closedir(_ p: UnsafeMutableRawPointer) -> CInt
 @_alwaysEmitIntoClient @inlinable @inline(__always)
 public func dirfd(_ p: UnsafeMutableRawPointer) -> CInt
 
-@_alwaysEmitIntoClient @inlinable @inline(__always)
+@_alwaysEmitIntoClient
 public var EINTR: CInt { BigC.EINTR }
 
 @_extern(c)
