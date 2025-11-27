@@ -182,3 +182,30 @@ SWIFT_INLINE FILE* swift_get_stdout() {
 SWIFT_INLINE FILE* swift_get_stderr() {
   return stderr;
 }
+
+// MARK: hton
+
+SWIFT_INLINE uint64_t swift_hton_u64_to_u64(uint64_t value) {
+  return htonll(value);
+}
+
+SWIFT_INLINE uint32_t swift_hton_u32_to_u32(uint32_t value) {
+  return htonl(value);
+}
+
+SWIFT_INLINE uint16_t swift_hton_u16_to_u16(uint16_t value) {
+  return htons(value);
+}
+
+// MARK: ntoh
+SWIFT_INLINE uint16_t swift_ntoh_u16_to_u16(uint16_t value) {
+  return ntohs(value);
+}
+
+SWIFT_INLINE uint32_t swift_ntoh_u32_to_u32(uint32_t value) {
+  return ntohl(value);
+}
+
+SWIFT_INLINE uint64_t swift_ntoh_u64_to_u64(uint64_t value) {
+  return ntohll(value);
+}
