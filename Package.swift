@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
   name: "LittleC",
   platforms: [
-    .macOS(.v14),
+    .macOS(.v10_15), .iOS(.v13), .tvOS(.v13), .watchOS(.v6), .macCatalyst(.v13),
   ],
   products: [
     .library(name: "LittleC", targets: ["LittleC"]),
@@ -29,3 +29,8 @@ let package = Package(
     ),
   ]
 )
+
+package.targets.append(contentsOf: [
+  .executableTarget(name: "thread-example", dependencies: ["LittleC"]),
+  .executableTarget(name: "multi-example", dependencies: ["LittleC"]),
+])
