@@ -25,8 +25,10 @@
 #include <sys/stat.h>
 #include <sys/statvfs.h>
 #include <sys/types.h>
+#include <sys/un.h>
 #include <sys/wait.h>
 #include <sys/ioctl.h>
+#include <sys/xattr.h>
 #include <unistd.h>
 #include <ifaddrs.h>
 #include <fts.h>
