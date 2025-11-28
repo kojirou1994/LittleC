@@ -1,3 +1,5 @@
+#include <string.h>
+
 #ifdef __linux__
 #define _GNU_SOURCE
 #endif
@@ -11,7 +13,6 @@
 #include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <arpa/inet.h>
 #include <dirent.h>
 #include <fcntl.h>
