@@ -16,14 +16,19 @@
 #include <arpa/inet.h>
 #include <dirent.h>
 #include <fcntl.h>
+#include <netdb.h>
+#include <poll.h>
 #include <pthread.h>
+#include <spawn.h>
 #include <sys/resource.h>
+#include <sys/socket.h>
 #include <sys/stat.h>
 #include <sys/statvfs.h>
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <sys/ioctl.h>
 #include <unistd.h>
+#include <ifaddrs.h>
 #include <fts.h>
 
 
