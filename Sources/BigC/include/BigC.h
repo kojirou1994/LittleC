@@ -1,5 +1,6 @@
 #include <string.h>
 #include <sys/socket.h>
+#include <sys/resource.h>
 
 #ifdef __linux__
 #define __USE_GNU
@@ -22,7 +23,6 @@
 #include <poll.h>
 #include <pthread.h>
 #include <spawn.h>
-#include <sys/resource.h>
 #include <sys/stat.h>
 #include <sys/statvfs.h>
 #include <sys/types.h>
