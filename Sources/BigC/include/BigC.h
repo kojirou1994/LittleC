@@ -1,3 +1,8 @@
+#ifdef __linux__
+#define _GNU_SOURCE
+#define _FILE_OFFSET_BITS 64
+#endif
+#include <stdint.h>
 #include <time.h>
 #if __has_include(<sys/errno.h>)
 #include <sys/errno.h>
@@ -7,11 +12,15 @@
 #include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <arpa/inet.h>
 #include <dirent.h>
 #include <fcntl.h>
 #include <pthread.h>
 #include <sys/resource.h>
+#include <sys/stat.h>
+#include <sys/statvfs.h>
+#include <sys/types.h>
 #include <sys/wait.h>
 #include <sys/ioctl.h>
 #include <unistd.h>
@@ -55,6 +64,8 @@ extern FILE *stdout SWIFT_NONISOLATED;
 extern FILE *stderr SWIFT_NONISOLATED;
 extern char **environ SWIFT_NONISOLATED;
 
+#include <gnu/libc-version.h>
+#include <sys/vfs.h>
 #endif
 
 extern void pthread_exit(void*) __attribute__((noreturn));
