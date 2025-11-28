@@ -38,6 +38,18 @@ SWIFT_INLINE int swift_openat(int fd, const char *path, int oflag, mode_t mode) 
   return openat(fd, path, oflag, mode);
 }
 
+SWIFT_INLINE int swift_ioctl(int fd, unsigned long int request) {
+  return ioctl(fd, request);
+}
+
+SWIFT_INLINE int swift_ioctl_int(int fd, unsigned long int request, int value) {
+  return ioctl(fd, request, value);
+}
+
+SWIFT_INLINE int swift_ioctl_ptr(int fd, unsigned long int request, void* ptr) {
+  return ioctl(fd, request, ptr);
+}
+
 #ifdef __APPLE__
 
 #include <libproc.h>
