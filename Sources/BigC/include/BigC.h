@@ -50,6 +50,18 @@ SWIFT_INLINE int swift_ioctl_ptr(int fd, unsigned long int request, void* ptr) {
   return ioctl(fd, request, ptr);
 }
 
+SWIFT_INLINE int swift_fcntl(int fd, int cmd) {
+  return fcntl(fd, cmd);
+}
+
+SWIFT_INLINE int swift_fcntl_int(int fd, int cmd, int value) {
+  return fcntl(fd, cmd, value);
+}
+
+SWIFT_INLINE int swift_fcntl_ptr(int fd, int cmd, void* ptr) {
+  return fcntl(fd, cmd, ptr);
+}
+
 #ifdef __APPLE__
 
 #include <libproc.h>
