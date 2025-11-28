@@ -25,9 +25,11 @@
 #include <spawn.h>
 #include <sys/stat.h>
 #include <sys/statvfs.h>
+#include <sys/time.h>
 #include <sys/types.h>
 #include <sys/un.h>
 #include <sys/wait.h>
+#include <sys/file.h>
 #include <sys/ioctl.h>
 #include <sys/xattr.h>
 #include <unistd.h>
