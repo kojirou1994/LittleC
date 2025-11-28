@@ -5,7 +5,7 @@ public var SIG_DFL: sig_t? { nil }
 public var SIG_IGN: sig_t { unsafeBitCast(1, to: sig_t.self) }
 public var SIG_ERR: sig_t { unsafeBitCast(-1, to: sig_t.self) }
 public var SIG_HOLD: sig_t {
-  #if canImport(Darwin)
+  #if APPLE
   unsafeBitCast(5, to: sig_t.self)
   #else
   unsafeBitCast(3, to: sig_t.self)

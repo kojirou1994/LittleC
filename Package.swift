@@ -19,6 +19,7 @@ let package = Package(
         "BigC",
       ],
       swiftSettings: [
+        .define("APPLE", .when(platforms: [.macOS, .iOS, .tvOS, .watchOS, .macCatalyst])),
         .define("UNIX_BSD", .when(platforms: [.macOS, .iOS, .tvOS, .watchOS, .macCatalyst])),
         .enableExperimentalFeature("Extern"),
       ]
