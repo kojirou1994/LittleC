@@ -76,6 +76,7 @@ SWIFT_INLINE int swift_fcntl_ptr(int fd, int cmd, void* ptr) {
 
 #include <libproc.h>
 #include <removefile.h>
+#include <crt_externs.h>
 
 SWIFT_INLINE unsigned long swift_FIOSETOWN() {
   return FIOSETOWN;
@@ -91,12 +92,15 @@ SWIFT_INLINE unsigned long swift_FIODTYPE() {
 
 #endif
 
+#ifndef __APPLE__
+extern char **environ SWIFT_NONISOLATED;
+#endif
+
 #ifdef __linux__
 
 extern FILE *stdin SWIFT_NONISOLATED;
 extern FILE *stdout SWIFT_NONISOLATED;
 extern FILE *stderr SWIFT_NONISOLATED;
-extern char **environ SWIFT_NONISOLATED;
 
 #include <gnu/libc-version.h>
 #include <sys/vfs.h>
