@@ -72,6 +72,14 @@ SWIFT_INLINE int swift_fcntl_ptr(int fd, int cmd, void* ptr) {
   return fcntl(fd, cmd, ptr);
 }
 
+SWIFT_INLINE char* swift_dirent_getname(struct dirent* entry) {
+  return entry->d_name;
+}
+
+SWIFT_INLINE char* swift_ftsent_getname(FTSENT* entry) {
+  return entry->fts_name;
+}
+
 #ifdef __APPLE__
 
 #include <libproc.h>
