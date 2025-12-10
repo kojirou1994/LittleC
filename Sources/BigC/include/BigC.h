@@ -1,9 +1,13 @@
-#include <string.h>
 #include <sys/socket.h>
 #include <sys/resource.h>
 
 #ifdef __linux__
 #define __USE_GNU
+#endif
+
+#include <string.h>
+
+#ifdef __linux__
 #define _GNU_SOURCE
 #endif
 #include <stdint.h>
