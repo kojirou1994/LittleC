@@ -31,7 +31,3 @@ let package = Package(
   ]
 )
 
-package.targets.append(contentsOf: [
-  .executableTarget(name: "thread-example", dependencies: ["LittleC"]),
-  .executableTarget(name: "multi-example", dependencies: ["LittleC"]),
-])
