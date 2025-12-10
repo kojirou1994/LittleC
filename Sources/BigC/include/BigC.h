@@ -1,6 +1,5 @@
 #ifdef __linux__
 #define _GNU_SOURCE
-#define _FILE_OFFSET_BITS 64
 #endif
 
 #include <string.h>
