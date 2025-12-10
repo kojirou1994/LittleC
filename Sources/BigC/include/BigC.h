@@ -1,8 +1,12 @@
+/// prevent wrong signatures
 #include <sys/socket.h>
 #include <sys/resource.h>
 
 #ifdef __linux__
+/// looks like not working
 #define _GNU_SOURCE
+/// must set manually
+#define __USE_GNU
 #endif
 
 #include <string.h>
