@@ -1,10 +1,12 @@
+#ifdef __linux__
+#define _GNU_SOURCE
+#define _FILE_OFFSET_BITS 64
+#endif
+
 #include <string.h>
 #include <sys/socket.h>
 #include <sys/resource.h>
 
-#ifdef __linux__
-#define _GNU_SOURCE
-#endif
 #include <stdint.h>
 #include <time.h>
 #if __has_include(<sys/errno.h>)
@@ -114,6 +116,15 @@ extern FILE *stderr SWIFT_NONISOLATED;
 #endif
 
 extern void pthread_exit(void*) __attribute__((noreturn));
+
+SWIFT_INLINE int swift_strerror_r(int errnum, char *buf, size_t buflen) {
+#ifdef __USE_GNU
+  extern extern int __xpg_strerror_r(int __errnum, char *__buf, size_t __buflen);
+  return __xpg_strerror_r(errnum, buf, buflen);
+#else
+  return strerror_r(errnum, buf, buflen);
+#endif
+}
 
 SWIFT_INLINE int swift_WIFEXITED(int status) {
   return WIFEXITED(status);
