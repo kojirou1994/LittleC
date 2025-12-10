@@ -1,10 +1,11 @@
+#include <sys/socket.h>
+#include <sys/resource.h>
+
 #ifdef __linux__
 #define _GNU_SOURCE
 #endif
 
 #include <string.h>
-#include <sys/socket.h>
-#include <sys/resource.h>
 
 #include <stdint.h>
 #include <time.h>
