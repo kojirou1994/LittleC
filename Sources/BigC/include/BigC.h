@@ -40,7 +40,9 @@
 #include <unistd.h>
 #include <ifaddrs.h>
 #include <fts.h>
-
+#if __has_include(<sys/sysmacros.h>)
+#include <sys/sysmacros.h>
+#endif
 
 #define SWIFT_NONISOLATED           __attribute__((__swift_attr__("nonisolated(unsafe)")))
 #define SWIFT_INLINE                static inline __attribute__((__always_inline__))
