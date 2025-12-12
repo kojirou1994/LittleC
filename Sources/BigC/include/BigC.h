@@ -123,7 +123,7 @@ extern FILE *stderr SWIFT_NONISOLATED;
 
 extern void pthread_exit(void*) __attribute__((noreturn));
 
-SWIFT_INLINE int swift_strerror_r(int errnum, char *buf, size_t buflen) {
+SWIFT_INLINE int swift_strerror_r(int errnum, char *buf __attribute__((__nonnull__)), size_t buflen) {
 #ifdef __USE_GNU
   extern extern int __xpg_strerror_r(int __errnum, char *__buf, size_t __buflen);
   return __xpg_strerror_r(errnum, buf, buflen);
