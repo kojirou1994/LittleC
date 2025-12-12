@@ -1,5 +1,6 @@
 import BigC
 
+//#if UNIX_BSD
 @_alwaysEmitIntoClient @inlinable @inline(__always)
 nonisolated(unsafe)
 public var stdin: UnsafeMutablePointer<FILE> {
@@ -24,8 +25,9 @@ public var stdout: UnsafeMutablePointer<FILE> {
 nonisolated(unsafe)
 public var stderr: UnsafeMutablePointer<FILE> {
   #if UNIX_BSD
-  BigC.__stdoutp
+  BigC.__stderrp
   #else
-  BigC.stdout
+  BigC.stderr
   #endif
 }
+//#endif
