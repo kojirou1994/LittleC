@@ -9,6 +9,7 @@ let package = Package(
   ],
   products: [
     .library(name: "LittleC", targets: ["LittleC"]),
+    .library(name: "PlatformC", targets: ["PlatformC"]),
   ],
   targets: [
     // modulemap to c header directly
@@ -22,6 +23,12 @@ let package = Package(
         .define("APPLE", .when(platforms: [.macOS, .iOS, .tvOS, .watchOS, .macCatalyst])),
         .define("UNIX_BSD", .when(platforms: [.macOS, .iOS, .tvOS, .watchOS, .macCatalyst])),
         .enableExperimentalFeature("Extern"),
+      ]
+    ),
+    .target(
+      name: "PlatformC",
+      swiftSettings: [
+        .define("APPLE", .when(platforms: [.macOS, .iOS, .tvOS, .watchOS, .macCatalyst])),
       ]
     ),
     .testTarget(
