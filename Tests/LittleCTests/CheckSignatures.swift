@@ -15,9 +15,11 @@ func checkSignatures() throws {
   #if !canImport(Darwin)
   check(LittleC.swift_strerror_r, PlatformC.strerror_r, "strerror_r")
   #endif
+#if canImport(Darwin)
   check(LittleC.strcasestr, PlatformC.strcasestr)
-  check(LittleC.strstr, PlatformC.strstr)
   check(LittleC.posix_spawn_file_actions_addchdir_np, PlatformC.posix_spawn_file_actions_addchdir_np)
+#endif
+  check(LittleC.strstr, PlatformC.strstr)
 
   #expect(LittleC.stdin == LittleC.stdin)
   #expect(LittleC.stdout == LittleC.stdout)
