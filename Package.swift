@@ -32,8 +32,23 @@ let package = Package(
       ]
     ),
     .testTarget(
+      name: "BigCTests",
+      dependencies: [
+        "BigC",
+      ],
+      swiftSettings: [
+        .swiftLanguageMode(.v5),
+      ]
+    ),
+    .testTarget(
       name: "LittleCTests",
-      dependencies: ["LittleC"]
+      dependencies: [
+        "LittleC",
+        "PlatformC",
+      ],
+      swiftSettings: [
+        .swiftLanguageMode(.v5),
+      ]
     ),
   ]
 )
