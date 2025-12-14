@@ -2,7 +2,7 @@
 #include <sys/socket.h>
 #include <sys/resource.h>
 
-#ifdef __linux__
+#if (defined(__linux__) && !defined(__musl__))
 /// looks like not working
 #define _GNU_SOURCE
 /// must set manually
@@ -13,11 +13,7 @@
 
 #include <stdint.h>
 #include <time.h>
-#if __has_include(<sys/errno.h>)
-#include <sys/errno.h>
-#else
 #include <errno.h>
-#endif
 #include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -111,7 +107,7 @@ SWIFT_INLINE unsigned long swift_FIODTYPE() {
 extern char **environ SWIFT_NONISOLATED;
 #endif
 
-#ifdef __linux__
+#ifdef __USE_GNU
 
 extern FILE *stdin SWIFT_NONISOLATED;
 extern FILE *stdout SWIFT_NONISOLATED;
