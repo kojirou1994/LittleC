@@ -33,7 +33,9 @@
 #include <sys/file.h>
 #include <sys/ioctl.h>
 #include <sys/xattr.h>
+#if defined(__linux__)
 #include <sys/sendfile.h>
+#endif
 #include <unistd.h>
 #include <ifaddrs.h>
 #include <fts.h>
