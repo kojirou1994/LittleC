@@ -33,6 +33,7 @@
 #include <sys/file.h>
 #include <sys/ioctl.h>
 #include <sys/xattr.h>
+#include <sys/sendfile.h>
 #include <unistd.h>
 #include <ifaddrs.h>
 #include <fts.h>
