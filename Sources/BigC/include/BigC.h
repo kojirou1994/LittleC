@@ -24,6 +24,7 @@
 #include <poll.h>
 #include <pthread.h>
 #include <spawn.h>
+#include <sys/mman.h>
 #include <sys/stat.h>
 #include <sys/statvfs.h>
 #include <sys/time.h>
